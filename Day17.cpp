@@ -1,53 +1,28 @@
-#include <iostream>
-#include <string>
 
+#include <bits/stdc++.h>
 using namespace std;
- 
-string deleteConsecutiveStrings(string s)
+
+char *removeDuplicate(char str[], int n)
 {
-    int i = 0;
-
-    int j = 0;
- 
-    string newElements = "";
-    while (j < s.length()) {
-
-        if (s[i] == s[j]) {
-
-            j++;
-
-        }
-
-        
-
-        else if (s[j] != s[i] || j == s.length() - 1) {
-
-            newElements += s[i];
- 
-
-            i = j;
-
-            j++;
-
-        }
-
-    }
- 
-    newElements += s[j - 1];
-
-    return newElements;
+int index = 0; 
+	
+for (int i=0; i<n; i++) {
+		
+	int j; 
+	for (j=0; j<i; j++) 
+		if (str[i] == str[j])
+		break;
+	
+	if (j == i)
+		str[index++] = str[i];
 }
- 
-
+	
+return str;
+}
 int main()
 {
-
-    string s = "geeks for geeks is best";
- 
-    cout << "Input  : " << s << endl;
-
-    cout << "Output : " << deleteConsecutiveStrings(s) << endl;
- 
-
-    return 0;
+char str[]= "Vivekakheniya";
+int n = sizeof(str) / sizeof(str[0]);
+cout << removeDuplicate(str, n);
+return 0;
 }
