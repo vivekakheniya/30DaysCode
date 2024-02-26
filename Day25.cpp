@@ -15,7 +15,7 @@ int sum(int n,int array[]){
 }
 int main(){
     int array[]={5,2,3,3,4};
-    int arraysize= sizeof(array)/sizeof(array[0]); // gives the array size.
+    int arraysize= sizeof(array)/sizeof(array[0]); 
     int output = sum(arraysize,array);
     cout<<output;
 }
